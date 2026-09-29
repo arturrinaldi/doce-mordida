@@ -1,0 +1,2296 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><style id="qw-theme">:root {
+  --color-bg: #121218;
+  --color-text: #e4e4ed;
+  --color-navbar-bg: #1a1a24;
+  --color-bg-chat-view: #121218;
+  --color-bg-secondary: #1a1a24;
+  --color-bg-tertiary: #1e1e2a;
+  --color-bg-hover: #2a2a38;
+  --color-surface: #1e1e2a;
+  --color-surface-hover: #2a2a38;
+  --color-surface-active: #353546;
+  --color-border: #ffffff1f;
+  --color-border-light: #ffffff0f;
+  --color-border-strong: #3a3a4e;
+  --color-primary: #8575ff;
+  --color-primary-dark: #4200db;
+  --color-primary-light: #8575ff;
+  --color-primary-bg: color-mix(in srgb, #8575ff 15%, transparent);
+  --color-primary-hover-border: #4200db;
+  --color-nav-icon-active: #8575ff;
+  --color-nav-hover-border: #8575ff;
+  --color-primary-alpha-3: color-mix(in srgb, #8575ff 3%, transparent);
+  --color-primary-alpha-5: color-mix(in srgb, #8575ff 5%, transparent);
+  --color-primary-alpha-8: color-mix(in srgb, #8575ff 8%, transparent);
+  --color-primary-alpha-12: color-mix(in srgb, #8575ff 12%, transparent);
+  --color-primary-alpha-15: color-mix(in srgb, #8575ff 15%, transparent);
+  --color-primary-alpha-20: color-mix(in srgb, #8575ff 20%, transparent);
+  --color-primary-alpha-25: color-mix(in srgb, #8575ff 25%, transparent);
+  --color-primary-alpha-30: color-mix(in srgb, #8575ff 30%, transparent);
+  --color-primary-alpha-40: color-mix(in srgb, #8575ff 40%, transparent);
+  --color-primary-alpha-50: color-mix(in srgb, #8575ff 50%, transparent);
+  --color-primary-alpha-60: color-mix(in srgb, #8575ff 60%, transparent);
+  --color-primary-subtle: color-mix(in srgb, #8575ff 25%, transparent);
+  --color-primary-border: color-mix(in srgb, #8575ff 50%, transparent);
+  --color-focus-ring: color-mix(in srgb, #8575ff 60%, transparent);
+  --color-sidebar-hover: color-mix(in srgb, #8575ff 15%, transparent);
+  --block-hover-outline: 1px dashed color-mix(in srgb, #8575ff 50%, transparent);
+  --block-selected-outline: 1px solid #8575ff;
+  --block-selection-outline-offset: 2px;
+  --block-selected-halo: 0 0 8px color-mix(in srgb, #8575ff 40%, transparent);
+  --color-accent: #8575ff;
+  --color-accent-foreground: #8575ff;
+  --color-accent-dark: #4200db;
+  --color-accent-light: color-mix(in srgb, #8575ff 15%, transparent);
+  --color-accent-inverse: #fff;
+  --color-link: #8575ff;
+  --color-primary-gradient-end: color-mix(in srgb, #8575ff 35%, transparent);
+  --color-primary-bg-solid: #1a1530;
+  --color-user-bubble: #333843;
+  --color-user-bubble-text: #e4e4ed;
+  --color-text-secondary: #a0a0b4;
+  --color-text-tertiary: #8a8a9a;
+  --color-text-muted: #6e6e82;
+  --color-text-on-primary: #fff;
+  --color-success: #4ade80;
+  --color-success-dark: #00802f;
+  --color-success-light: #d9ffd6;
+  --color-success-hover: #005c26;
+  --color-success-bg: #1c2c22;
+  --color-success-border: #0e3d1c;
+  --color-success-foreground: #4ade80;
+  --color-success-dark-foreground: #00802f;
+  --color-success-text: #4ade80;
+  --color-error: #ff6b6b;
+  --color-error-dark: #db0000;
+  --color-error-light: #ffe0e0;
+  --color-error-hover: #3b1a24;
+  --color-error-bg: #3b1a24;
+  --color-error-border: #5e1a24;
+  --color-error-active-border: #db0000;
+  --color-error-foreground: #ff6b6b;
+  --color-error-dark-foreground: #db0000;
+  --color-error-inverse: #fff;
+  --color-error-text: #ff6b6b;
+  --color-warning: #fbbf24;
+  --color-warning-dark: #573a00;
+  --color-warning-light: #fffbbd;
+  --color-warning-hover: #db9200;
+  --color-warning-bg: #3d3520;
+  --color-warning-border: #5e4a1a;
+  --color-warning-foreground: #fbbf24;
+  --color-warning-dark-foreground: #573a00;
+  --color-warning-inverse: #573a00;
+  --color-surface-warning: #fffbbd;
+  --color-text-warning: #573a00;
+  --color-info: #60a5fa;
+  --color-info-dark: #006ce0;
+  --color-info-light: #d1f1ff;
+  --color-info-hover: #003b8f;
+  --color-info-bg: #1a2a42;
+  --color-info-border: #0f3d6e;
+  --color-info-foreground: #60a5fa;
+  --color-info-dark-foreground: #002a66;
+  --color-info-inverse: #fff;
+  --color-overlay: #000000b3;
+  --color-shadow: #0000004d;
+  --color-hover: #ffffff0d;
+  --color-tooltip-bg: #1e1e2af2;
+  --color-tooltip-text: #e4e4ed;
+  --color-voice-purple: #8575ff;
+  --color-voice-purple-dark: #4200db;
+  --color-voice-purple-light: #8575ff;
+  --color-voice-red: #ff6b6b;
+  --color-voice-red-dark: #db0000;
+  --color-voice-amber: #fbbf24;
+  --color-voice-purple-glow: #8575ff66;
+  --color-voice-red-glow: #db000066;
+  --font-sans: "Amazon Ember", "Helvetica Neue", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "SF Mono", "Monaco", "Menlo", "Consolas", monospace;
+  --text-2xs: .5625rem;
+  --text-xs: .625rem;
+  --text-sm: .6875rem;
+  --text-base: .75rem;
+  --text-md: .8125rem;
+  --text-lg: .875rem;
+  --text-xl: 1rem;
+  --text-2xl: 1.125rem;
+  --text-3xl: 1.25rem;
+  --text-4xl: 1.5rem;
+  --text-5xl: 2rem;
+  --spacing-1: calc(.25rem * 1);
+  --spacing-1-5: calc(.25rem * 1.5);
+  --spacing-2: calc(.25rem * 2);
+  --spacing-3: calc(.25rem * 3);
+  --spacing-4: calc(.25rem * 4);
+  --spacing-5: calc(.25rem * 5);
+  --spacing-6: calc(.25rem * 6);
+  --spacing-7: calc(.25rem * 7);
+  --spacing-8: calc(.25rem * 8);
+  --spacing-9: calc(.25rem * 9);
+  --spacing-10: calc(.25rem * 10);
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-card: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 8px;
+  --shadow-sm: 0 1px 2px #0003;
+  --shadow-md: 0 4px 12px #0000004d;
+  --color-success-bg-solid: #1a3d28;
+  --color-error-bg-solid: #4a2028;
+  --color-error-border-solid: #5e1a24;
+  --color-warning-bg-solid: #4a3a1e;
+  --color-warning-text: #fbbf24;
+  --color-info-bg-solid: #1a3050;
+  --color-info-bg-solid-alt: #222240;
+  --color-info-text: #60a5fa;
+  --color-info-text-alt: #818cf8;
+  --color-emerald: #34d399;
+  --color-teal: #5eead4;
+  --color-code-bg: #1e1e2a;
+  --color-code-header-bg: #252535;
+  --color-code-text: #e4e4ed;
+  --color-code-border: #2e2e3e;
+  --color-code-muted: #6e6e82;
+  --color-inline-code-bg: #1e1e2a;
+  --color-inline-code-text: #e4e4ed;
+  --color-inline-code-border: #2e2e3e;
+  --color-scrollbar-thumb: #3a3a4e;
+  --color-scrollbar-track: transparent;
+  --color-graph-node-text: #e4e4ed;
+  --color-graph-node-text-dim: #6e6e82;
+  --color-graph-edge-default: #6e6e82;
+  --color-graph-edge-cross: #f39c12;
+  --color-graph-edge-text: #a0a0b4;
+  --color-graph-edge-stroke: #1a1a24;
+  --color-graph-highlight-bg: #ff6b6b;
+  --color-graph-highlight-border: #e74c3c;
+  --color-graph-search-bg: gold;
+  --color-graph-search-border: orange;
+  --color-graph-focus-border: #f44;
+  --color-graph-external-border: #6e6e82;
+  --color-graph-cat-file: #5dade2;
+  --color-graph-cat-folder: #aab7b8;
+  --color-graph-cat-file-aggregate: #5499c7;
+  --color-graph-cat-class: #bb8fce;
+  --color-graph-cat-function: #58d68d;
+  --color-graph-cat-method: #48c9b0;
+  --color-graph-cat-variable: #f5b041;
+  --color-graph-cat-import: #eb984e;
+  --color-graph-cat-module: #7e8ce0;
+  --color-graph-cat-concept: #ec7063;
+  --color-graph-cat-person: #ff8a8a;
+  --color-graph-cat-org: #76d7c4;
+  --color-graph-cat-organization: #76d7c4;
+  --color-graph-cat-product: #b8b0fe;
+  --color-graph-cat-metric: #fea0c0;
+  --color-graph-cat-location: #7e9bb5;
+  --color-graph-cat-date: #f092c0;
+  --color-graph-cat-code: #5dade2;
+  --color-graph-cat-doc: #aab7b8;
+  --color-graph-cat-url: #45d6b5;
+  --color-graph-cat-email: #8e7cf7;
+  --color-graph-cat-unknown: #d5dbdb;
+  --color-graph-rel-contains: #d5dbdb;
+  --color-graph-rel-extends: #bb8fce;
+  --color-graph-rel-implements: #5dade2;
+  --color-graph-rel-imports: #eb984e;
+  --color-graph-rel-uses: #58d68d;
+  --color-graph-rel-calls: #52be80;
+  --color-graph-rel-references: #f5b041;
+  --color-graph-rel-related-to: #aab7b8;
+  --color-graph-rel-works-on: #ec7063;
+  --color-graph-rel-owns: #48c9b0;
+  --color-graph-rel-depends-on: #eb984e;
+  --color-graph-rel-parent-of: #d5dbdb;
+  --qs-content: #fff;
+  --qs-main: #fff;
+  --qs-primary-foreground: #131920;
+  --qs-secondary-foreground: #656871;
+  --qs-tertiary-foreground: #6e6e82;
+  --qs-placeholder-foreground: #8c8c94;
+  --qs-divider: #dedee3;
+  --qs-default-border: #8c8c94;
+  --qs-neutral-soft: #b4b4bb;
+  --qs-neutral-gray-50: #1e1e2a;
+  --qs-tertiary-background: #1e1e2a;
+  --qs-action-hover: #f3f3f7;
+  --qs-primary-default: #4200db;
+  --qs-primary-dark: #35009e;
+  --qs-primary-light: #e8e6ff;
+  --qs-success-default: #00802f;
+  --qs-error-default: #db0000;
+  --qs-font-sans: "Amazon Ember", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
+  --safe-top: 0px;
+  --safe-bottom: 0px;
+  --safe-left: 0px;
+  --safe-right: 0px;
+  --qs-font-family: "Amazon Ember", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
+  --qs-font-base-letter-spacing: .15px;
+  --qs-shadow-sm: 0 0 2px 0 #00000029, 0 0 4px 0 #00000029;
+  --qs-shadow-md: 0 0 2px 0 #00000029, 0 2px 8px 1px #00000029;
+  --qs-shadow-lg: 0 4px 16px 4px #00000029, 0 2px 6px 1px #00000029;
+  --qs-shadow-xl: 0 4px 8px 2px #00000029, 0 6px 20px 4px #00000029;
+  --qs-width-modal-sm: 384px;
+  --qs-width-modal-md: 600px;
+  --qs-width-modal-lg: 1136px;
+  --qs-grid-gap: 16px;
+  --qs-grid-gap-xl: 24px;
+  --qs-primary-medium: #8575ff;
+  --qs-primary-inverse: #fff;
+  --qs-neutral-lightest: #f9f9fb;
+  --qs-neutral-light: #f3f3f7;
+  --qs-neutral-default: #dedee3;
+  --qs-neutral-medium: #8c8c94;
+  --qs-neutral-deep: #656871;
+  --qs-neutral-dark: #333843;
+  --qs-neutral-strong: #131920;
+  --qs-neutral-white: #fff;
+  --qs-neutral-black: #000;
+  --qs-success-medium: #005c26;
+  --qs-success-dark: #00471e;
+  --qs-success-light: #d9ffd6;
+  --qs-success-inverse: #fff;
+  --qs-info-default: #006ce0;
+  --qs-info-medium: #003b8f;
+  --qs-info-dark: #002a66;
+  --qs-info-light: #d1f1ff;
+  --qs-info-inverse: #fff;
+  --qs-warning-default: #f2b100;
+  --qs-warning-medium: #db9200;
+  --qs-warning-dark: #573a00;
+  --qs-warning-light: #fffbbd;
+  --qs-warning-inverse: #573a00;
+  --qs-warning-experimental: #f2b100;
+  --qs-warning-experimental-light: #fffbbd;
+  --qs-warning-experimental-light-foreground: #fffbbd;
+  --qs-error-medium: #900;
+  --qs-error-dark: #700000;
+  --qs-error-light: #ffe0e0;
+  --qs-error-inverse: #fff;
+  --qs-connection-default: #db3300;
+  --qs-connection-soft: #ff997a;
+  --qs-connection-light: #ffe0d6;
+  --qs-connection-dark: #661800;
+  --qs-automation-default: #b3008f;
+  --qs-automation-medium: #d600ba;
+  --qs-automation-soft: #ff94f1;
+  --qs-automation-light: #ffe0fb;
+  --qs-automation-dark: #660052;
+  --qs-insight-default: #a000b8;
+  --qs-insight-soft: #f299ff;
+  --qs-insight-light: #fce6ff;
+  --qs-insight-dark: #590066;
+  --qs-visualization-default: #7300e5;
+  --qs-visualization-soft: #d4a8ff;
+  --qs-visualization-light: #f2e5ff;
+  --qs-visualization-dark: #45008a;
+  --qs-spice: #ff9800;
+  --qs-coachmark: #006ce0;
+  --qs-brand: #fff;
+  --qs-brand-foreground: #131920;
+  --qs-brand-navbar: #131920;
+  --qs-brand-navbar-foreground: #fff;
+  --qs-brand-navbar-light: #dedee3;
+  --qs-brand-navbar-dark: #000;
+  --qs-application-navbar: #4200db;
+  --qs-application-navbar-foreground: #fff;
+  --qs-application-navbar-light: #e8e6ff;
+  --qs-application-navbar-dark: #35009e;
+  --qs-dimension: #4200db;
+  --qs-dimension-foreground: #fff;
+  --qs-dimension-experimental: #4200db;
+  --qs-dimension-experimental-foreground: #4200db;
+  --qs-measure: #00802f;
+  --qs-measure-foreground: #fff;
+  --qs-measure-experimental: #f2b100;
+  --qs-measure-experimental-foreground: #f2b100;
+  --qs-content-inverse: #333843;
+  --qs-content-inverse-active: #131920;
+  --qs-secondary: #dedee3;
+  --qs-disabled: #8c8c94;
+  --qs-divider-light: #f3f3f7;
+  --qs-hover-border: #333843;
+  --qs-active-border: #4200db;
+  --qs-disabled-border: #dedee3;
+  --qs-error-border: #ffe0e0;
+  --qs-error-active-border: #db0000;
+  --qs-disabled-foreground: #b4b4bb;
+  --qs-primary-inverse-foreground: #fff;
+  --qs-error-foreground: #db0000;
+  --qs-contrast-foreground: #131920;
+  --qs-main-foreground: #131920;
+  --qs-main-secondary-foreground: #656871;
+  --qs-action-disabled: #f3f3f7;
+  --qs-action-active: #e8e6ff;
+  --qs-default-badge: #dedee3;
+  --qs-tag-default: #dedee3;
+  --qs-tag-soft-border: #b4b4bb;
+  --qs-focus-offset: 1px;
+  --qs-toggle-tile-sm: calc(.25rem * 8);
+  --qs-toggle-tile-md: calc(.25rem * 12);
+  --qs-toggle-tile-lg: calc(.25rem * 15);
+  --qs-shadow-pin-right: inset 4px 0 4px -4px #00000029;
+  --qs-shadow-pin-left: inset -4px 0 4px -4px #00000029;
+  --react-pdf-text-layer: 1;
+  --highlight-bg-color: #b400aa;
+  --highlight-selected-bg-color: #006400;
+  --react-pdf-annotation-layer: 1;
+  --annotation-unfocused-field-background: url("data:image/svg+xml;charset=UTF-8,<svg width='1px' height='1px' xmlns='http://www.w3.org/2000/svg'><rect width='100%' height='100%' style='fill:rgba(0, 54, 255, 0.13);'/></svg>");
+  --input-focus-border-color: Highlight;
+  --input-focus-outline: 1px solid Canvas;
+  --input-unfocused-border-color: transparent;
+  --input-disabled-border-color: transparent;
+  --input-hover-border-color: black;
+  --link-outline: none;
+  color-scheme: dark;
+}
+body { background: var(--color-bg); color: var(--color-text); }
+a { color: var(--color-link, var(--color-primary)); }</style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Doce Mordida — Biscoitos Artesanais</title>
+
+    <!-- Favicon (usa o logo.png que você informou) -->
+    <link rel="icon" type="image/png" href="logo.png">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600;800&amp;display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Doce Mordida - Biscoitos Artesanais",
+      "url": "https://docemordidabiscoitos.com.br",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://docemordidabiscoitos.com.br/logo.png"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+55-16-99788-4274",
+        "contactType": "customer service"
+      }
+    }
+    </script>
+
+    <style>
+        :root {
+            --beige: #F7E6C9;
+            --light-beige: #FFF7ED;
+            --brown: #7A4F2A;
+            --dark-brown: #3F2818;
+            --accent: #C8915A;
+            --pink-logo: #F28FA1;
+            --whatsapp: #25D366;
+            --ifood: #EA1D2C;
+        }
+
+        /* BASE */
+        html,
+        body {
+            padding-top: 80px;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            font-family: "Nunito", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            color: var(--dark-brown);
+            background: linear-gradient(180deg, var(--light-beige) 0%, #fff 100%);
+        }
+
+        /* Fundo decorativo */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background-image: url('background-natal.png');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            opacity: 0.06;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        header,
+        section,
+        footer,
+        .hero,
+        .about-card,
+        .product-card {
+            position: relative;
+            z-index: 1;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* CENTRALIZAÇÃO GLOBAL */
+        .container {
+            margin: 0 auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            max-width: 1140px;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            backdrop-filter: blur(4px);
+        }
+
+        .navbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar-brand img {
+            height: 45px;
+            width: auto;
+            transition: transform .25s;
+        }
+
+        .navbar-brand .brand-name {
+            font-weight: 800;
+            color: var(--brown);
+            font-size: 1.05rem;
+        }
+
+        .nav-link {
+            color: var(--dark-brown) !important;
+            font-weight: 600;
+            transition: color .18s;
+        }
+
+        .nav-link:hover {
+            color: var(--pink-logo) !important;
+        }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(135deg, var(--beige) 0%, var(--light-beige) 100%);
+            border-radius: 20px;
+            padding: 60px 24px;
+            box-shadow: 0 12px 40px rgba(121, 84, 45, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero .title {
+            color: var(--dark-brown);
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .hero .lead {
+            color: rgba(63, 40, 24, 0.85);
+            font-size: 1.125rem;
+        }
+
+        .hero img {
+            transition: transform .4s ease;
+        }
+
+        .hero img:hover {
+            transform: translateY(-6px) scale(1.05);
+        }
+
+        /* CARDS */
+        .about-card,
+        .product-card {
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(121, 84, 45, 0.08);
+            background: white;
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 35px rgba(121, 84, 45, 0.12);
+        }
+
+        /* BOTÕES */
+        .btn-whatsapp {
+            background: var(--whatsapp);
+            color: white;
+            border: 0;
+            font-weight: 700;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.24);
+            transition: transform .2s;
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-3px) scale(1.02);
+        }
+
+        .btn-pink {
+            background: var(--pink-logo);
+            color: white;
+            border: 0;
+            font-weight: 700;
+            box-shadow: 0 8px 20px rgba(242, 143, 161, 0.22);
+            transition: transform .22s;
+        }
+
+        .btn-pink:hover {
+            transform: translateY(-3px) scale(1.03);
+        }
+
+        .btn-ifood {
+            background: #fff;
+            border: 2px solid var(--ifood);
+            border-radius: 12px;
+            padding: .45rem .9rem;
+            box-shadow: 0 8px 22px rgba(234, 29, 44, 0.08);
+            transition: all .18s ease;
+        }
+
+        .btn-ifood:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 30px rgba(234, 29, 44, 0.18);
+        }
+
+        /* FOOTER */
+        footer {
+            color: rgba(63, 40, 24, 0.8);
+            padding: 40px 0;
+        }
+
+        /* ANIMAÇÕES */
+        .fade-up {
+            opacity: 1;
+            transform: translateY(20px);
+            transition: opacity .6s ease, transform .6s ease;
+        }
+
+        .fade-up.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* TÍTULOS DE SEÇÃO */
+        .section-header h2 {
+            position: relative;
+            display: inline-block;
+            font-weight: 800;
+            color: var(--dark-brown);
+        }
+
+        .section-header h2::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 72px;
+            height: 4px;
+            background-color: var(--pink-logo);
+            border-radius: 3px;
+        }
+
+        /* PRODUTOS */
+        .product-card img {
+            max-height: 220px;
+            object-fit: contain;
+            padding: 10px;
+        }
+
+        .color-pink {
+            color: var(--pink-logo);
+        }
+
+        .fw-800 {
+            font-weight: 800;
+        }
+
+        /* ELEMENTOS FLUTUANTES */
+        .biscoito-flutuante {
+            position: fixed;
+            top: 3vw;
+            right: 3vw;
+            width: 12vw;
+            max-width: 220px;
+            min-width: 100px;
+            opacity: 0.92;
+            animation: girar 8s linear infinite, flutuar 3s ease-in-out infinite alternate;
+            z-index: 9999;
+            pointer-events: none;
+        }
+
+        @keyframes girar {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes flutuar {
+            from {
+                transform: translateY(0);
+            }
+
+            to {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* NEVE DE MINI BISCOITOS */
+        .biscoito-neve {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .biscoito-neve span {
+            position: absolute;
+            top: -80px;
+            font-size: 36px;
+            opacity: 0.8;
+            transform-origin: center;
+            animation: cair linear infinite;
+            display: block;
+        }
+
+        @keyframes cair {
+            from {
+                transform: translateY(-80px) rotate(0deg);
+                opacity: 0.8;
+            }
+
+            to {
+                transform: translateY(110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .biscoito-neve span:nth-child(1) {
+            left: 5%;
+            animation-duration: 13s;
+            animation-delay: 0s;
+        }
+
+        .biscoito-neve span:nth-child(2) {
+            left: 20%;
+            animation-duration: 16s;
+            animation-delay: 2s;
+        }
+
+        .biscoito-neve span:nth-child(3) {
+            left: 35%;
+            animation-duration: 12s;
+            animation-delay: 4s;
+        }
+
+        .biscoito-neve span:nth-child(4) {
+            left: 50%;
+            animation-duration: 15s;
+            animation-delay: 1s;
+        }
+
+        .biscoito-neve span:nth-child(5) {
+            left: 65%;
+            animation-duration: 14s;
+            animation-delay: 3s;
+        }
+
+        .biscoito-neve span:nth-child(6) {
+            left: 80%;
+            animation-duration: 17s;
+            animation-delay: 5s;
+        }
+
+        .biscoito-neve span:nth-child(7) {
+            left: 90%;
+            animation-duration: 11s;
+            animation-delay: 0.5s;
+        }
+
+        @media (max-width:767px) {
+            .biscoito-neve span {
+                font-size: 28px;
+            }
+        }
+
+        /* WHATSAPP FLOAT */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 22px;
+            right: 22px;
+            z-index: 9999;
+            border-radius: 50%;
+            box-shadow: 0 12px 30px rgba(37, 211, 102, 0.22);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 56px;
+            height: 56px;
+            background: var(--whatsapp);
+            color: #fff;
+            font-size: 22px;
+            transition: transform .18s;
+        }
+
+        .whatsapp-float:hover {
+            transform: translateY(-3px);
+        }
+
+        .map-wrapper {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(63, 40, 24, 0.06);
+        }
+
+        /* RESPONSIVIDADE */
+        @media (max-width:767px) {
+            .hero {
+                padding: 36px 16px;
+                text-align: center
+            }
+
+            .navbar-brand img {
+                height: 40px;
+            }
+
+            .hero .lead {
+                font-size: 1rem;
+            }
+
+            .biscoito-flutuante {
+                display: none !important;
+                top: 18px;
+                right: 18px;
+                width: 70px;
+            }
+
+            .biscoito-neve img {
+                width: 28px;
+            }
+
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+        }
+
+        /* OUTRAS ANIMAÇÕES */
+        .cookie-girando {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20vw;
+            left: -10vw;
+            opacity: 0.9;
+            animation: girarCookie 50s linear infinite;
+            z-index: 50;
+            pointer-events: none;
+
+        }
+
+        @keyframes girarCookie {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cookie-girando {
+                width: 140px;
+                left: -60px;
+                bottom: 20px;
+                display: none !important;
+            }
+        }
+
+        .mascote-cocegas {
+            display: inline-block;
+            transition: transform 0.2s ease;
+        }
+
+        .mascote-cocegas:hover {
+            animation: cocegas 0.5s ease-in-out;
+        }
+
+        @keyframes cocegas {
+            0% {
+                transform: rotate(0deg) translateY(0);
+            }
+
+            10% {
+                transform: rotate(4deg) translateY(-2px);
+            }
+
+            20% {
+                transform: rotate(-4deg) translateY(2px);
+            }
+
+            30% {
+                transform: rotate(3deg) translateY(-1px);
+            }
+
+            40% {
+                transform: rotate(-3deg) translateY(1px);
+            }
+
+            50% {
+                transform: rotate(2deg) translateY(0);
+            }
+
+            60% {
+                transform: rotate(-2deg) translateY(-1px);
+            }
+
+            70% {
+                transform: rotate(1deg) translateY(1px);
+            }
+
+            80% {
+                transform: rotate(-1deg) translateY(0);
+            }
+
+            100% {
+                transform: rotate(0deg) translateY(0);
+            }
+        }
+
+        .aspect-ratio-16x9 {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-top: 56.25%;
+        }
+
+        .aspect-ratio-16x9 .carousel-item {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="biscoito-neve" aria-hidden="true">
+        <span>🍪</span>
+        <span>🍪</span>
+        <span>🍪</span>
+        <span>🍪</span>
+        <span>🍪</span>
+        <span>🍪</span>
+        <span>🍪</span>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-white shadow-sm" style="z-index: 20;">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+                <img src="logo.png" alt="Doce Mordida logo">
+                <div class="d-none d-md-block">
+                    <div class="brand-name">Doce Mordida</div>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#historia">Nossa História</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#produtos">Produtos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#nutricional">Tabela Nutricional</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header id="inicio" class="container my-5" style="position: relative; z-index: 10;">
+        <div class="hero d-flex align-items-center gap-4">
+            <div class="row w-100 align-items-center">
+                <div class="col-lg-6 fade-up">
+                    <h1 class="title display-6">Biscoitos Artesanais de Amendoim e Cookies</h1>
+                    <p class="lead mb-4">Feitos com carinho em Campinas. Crocantes por fora, macios por dentro — sabor
+                        que
+                        conquista.</p>
+                    <div class="d-flex gap-2 flex-wrap align-items-center">
+                        <a class="btn btn-whatsapp btn-lg" href="https://wa.me/5516936180155" target="_blank" rel="noopener noreferrer">
+                            <i class="bi bi-whatsapp me-2"></i>Peça pelo WhatsApp
+                        </a>
+
+                        <!-- botão principal que você escolheu -->
+                        <a href="#produtos" class="btn btn-pink btn-lg">
+                            <i></i>🍪Explorar Sabores
+                        </a>
+
+                        <!-- botão iFood destacado no banner -->
+                        <a href="https://www.ifood.com.br/delivery/campinas-sp/doce-mordida-sao-bernardo/77c04a81-ce4b-4883-8123-2a0791923190" target="_blank" rel="noopener noreferrer" class="btn btn-ifood btn-lg d-flex align-items-center justify-content-center">
+                            <img src="ifood.png" alt="Peça no iFood" style="height: 28px; width: auto;">
+                        </a>
+
+
+                    </div>
+                </div>
+
+                <div class="col-lg-6 text-center d-lg-block fade-up">
+                    <img src="mordidinha.png" alt="Mascote Doce Mordida" class="mascote-cocegas" style="max-width:380px; width:80%; transform: translateY(-6px);">
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- BISCOITO GIRANDO (canto superior direito) -->
+    <img src="biscoito.png" alt="Biscoito girando" class="biscoito-flutuante" aria-hidden="true">
+
+    <!-- SOBRE -->
+    <section id="sobre" class="container my-5" style="position: relative; z-index: 10;">
+        <div class="row align-items-center g-4">
+            <div class="col-md-6 fade-up">
+                <div class="about-card p-4">
+                    <h2 class="h4" style="color:var(--brown); font-weight:800">Sobre Nós</h2>
+                    <p>Produzimos biscoitos artesanais de amendoim e cookies americanos com receitas tradicionais e
+                        ingredientes selecionados. Cada
+                        fornada é feita à mão, equilibrando crocância e maciez.</p>
+                    <p>Atendemos encomendas em Campinas e região — kits para presente e embalagens personalizadas para
+                        eventos.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-6 text-center fade-up">
+                <img src="chef.png" alt="Artur e Camila" class="img-fluid" style="max-width:420px;">
+            </div>
+        </div>
+    </section>
+
+    <!-- HISTÓRIA -->
+    <section id="historia" class="container my-5 fade-up" style="position: relative; z-index: 10;">
+        <div class="about-card p-4">
+            <h2 class="h4 mb-3" style="color:var(--brown); font-weight:800">Doce Mordida: Uma Herança de Sabor e Afeto
+            </h2>
+            <p>A história da Doce Mordida nasceu muito antes de suas primeiras fornadas oficiais, aninhada em um sonho
+                de
+                Eunice, mãe de Artur. Nos longínquos anos 90, ela já dominava o segredo: ingredientes simples têm o
+                poder de
+                aquecer a alma. Por décadas, esse desejo permaneceu guardado, como uma preciosa receita esperando o
+                momento
+                exato para ser tirada de um antigo caderno de vida.</p>
+            <p>O sabor dessa lembrança reacendeu em 2015. Nos fins de semana, a cozinha de família virou um laboratório
+                de
+                afeto, resgatando petit fours, as clássicas goiabinhas da avó e, claro, o carro-chefe: o biscoito de
+                amendoim. A
+                receita foi lapidada e ganhou o toque mágico que a definiria: ser mergulhada no mais puro chocolate.
+                Naquele
+                tempo, era apenas um tesouro familiar, assado no forno humilde da cozinha.</p>
+            <p>O verdadeiro salto, no entanto, veio em 2025, na vibrante cidade de Campinas. O destino foi selado quando
+                Camila (de Artur e, na época, professora) teve a simples ideia de levar os biscoitos para um lanche da
+                tarde na
+                escola. O que se seguiu foi totalmente inesperado: o sabor artesanal conquistou a todos de forma
+                imediata. Nossa
+                primeira grande encomenda chegou no mesmo dia: 30 pacotes! Foi o sinal inegável de que a Doce Mordida
+                não era
+                mais apenas um hobby, mas uma vocação que precisava se tornar realidade.</p>
+            <p>Hoje, evoluímos do nosso pequeno apartamento para uma cozinha ampla e dedicada, estruturada para levar
+                calor e
+                sabor a cada vez mais corações. A Doce Mordida é mais que uma empresa; é um elo que conecta gerações,
+                nascida do
+                sonho fundador de Eunice e cultivada com paixão por Artur e Camila. Cada biscoito carrega nossa herança,
+                amor e
+                a esperança de deixar a sua vida um pouco mais doce.</p>
+        </div>
+    </section>
+
+
+    <!-- CARROSSEL DE FOTOS COMPACTO -->
+    <section id="galeria" class="container my-5 fade-up" style="max-width: 900px;">
+        <div class="section-header text-center mb-4">
+            <h2 class="display-6">Momentos Doces 🍪</h2>
+            <p class="text-muted">Bastidores e amor em cada fornada.</p>
+        </div>
+
+        <div id="carouselDoceMordida" class="carousel slide shadow rounded-4 overflow-hidden" data-bs-ride="carousel">
+            <div class="carousel-inner aspect-ratio-16x9">
+                <div class="carousel-item active">
+                    <img src="carousel-1.png" class="d-block w-100" alt="Cookie" style="object-fit: cover; height: 100%;">
+                </div>
+                <div class="carousel-item">
+                    <img src="carousel-2.jpeg" class="d-block w-100" alt="Cookie" style="object-fit: cover; height: 100%;">
+                </div>
+                <div class="carousel-item">
+                    <img src="carousel-3.jpeg" class="d-block w-100" alt="Cookie" style="object-fit: cover; height: 100%;">
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Controles laterais -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselDoceMordida" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselDoceMordida" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Próximo</span>
+        </button>
+        
+    </section>
+
+
+    <!-- PRODUTOS: Biscoitos + Cookies (separados e padronizados) -->
+    <section id="produtos" class="py-5" style="background-color: rgba(247,230,201,0.5); position: relative; z-index: 10;">
+        <div class="container fade-up">
+            <div class="section-header text-center mb-5">
+                <h2 class="display-6">Nossos Produtos</h2>
+                <p class="text-muted">Escolha entre nossas duas linhas exclusivas de sabor artesanal.</p>
+            </div>
+
+            <!-- BISCOITOS DE AMENDOIM (sem ícone de etiqueta conforme pedido) -->
+            <div class="product-category mb-5">
+                <div class="text-center mb-4">
+                    <h3 class="fw-800" style="color:var(--accent);">Biscoitos de Amendoim</h3>
+                    <p class="text-muted">Nossa marca registrada. Receita exclusiva!</p>
+                </div>
+
+                <div class="row g-4">
+                    <!-- seus cards originais mantidos -->
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 fade-up">
+                        <div class="card product-card h-100">
+                            <img src="chocolate.png" class="card-img-top" alt="Meio Amargo">
+                            <div class="card-body">
+                                <h5 class="card-title">Meio Amargo</h5>
+                                <p class="card-text small text-muted">O clássico da casa. Biscoito crocante de amendoim
+                                    com uma
+                                    cobertura do intenso chocolate meio amargo.</p>
+                                <p class="text-secondary mb-0" style="font-size: 0.8rem;">
+                                    <em>Aprox. 120g • 6 biscoitos por pacote</em>
+                                </p>
+                            </div>
+                            <div class="card-footer bg-white border-0 py-3 px-4 text-center">
+                                <span class="fw-bold fs-5 color-pink d-block">R$ 14,00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 fade-up">
+                        <div class="card product-card h-100">
+                            <img src="biscoito-branco.png" class="card-img-top" alt="Chocolate Branco">
+                            <div class="card-body">
+                                <h5 class="card-title">Chocolate Branco</h5>
+                                <p class="card-text small text-muted">Doçura suave. Nosso biscoito de amendoim com uma
+                                    camada do
+                                    aveludado chocolate branco. Irresistível!</p>
+                                <p class="text-secondary mb-0" style="font-size: 0.8rem;">
+                                    <em>Aprox. 120g • 6 biscoitos por pacote</em>
+                                </p>
+                            </div>
+                            <div class="card-footer bg-white border-0 py-3 px-4 text-center">
+                                <span class="fw-bold fs-5 color-pink d-block">R$ 14,00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 fade-up">
+                        <div class="card product-card h-100">
+                            <img src="caramelo.png" class="card-img-top" alt="Caramelo Salgado">
+                            <div class="card-body">
+                                <h5 class="card-title">Caramelo Salgado</h5>
+                                <p class="card-text small text-muted">A tendência que vicia! Biscoito de amendoim com
+                                    uma cobertura de
+                                    caramelo e um toque de flor de sal para realçar o sabor.</p>
+                                <p class="text-secondary mb-0" style="font-size: 0.8rem;">
+                                    <em>Aprox. 120g • 6 biscoitos por pacote</em>
+                                </p>
+                            </div>
+                            <div class="card-footer bg-white border-0 py-3 px-4 text-center">
+                                <span class="fw-bold fs-5 color-pink d-block">R$ 14,00</span>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 fade-up">
+                        <div class="card product-card h-100">
+                            <img src="limaos.png" class="card-img-top" alt="Limão Siciliano">
+                            <div class="card-body">
+                                <h5 class="card-title">Limão Siciliano</h5>
+                                <p class="card-text small text-muted">Leve e refrescante. O aroma e a acidez elegante do
+                                    limão siciliano
+                                    em uma cobertura que traz leveza ao biscoito.</p>
+                                <p class="text-secondary mb-0" style="font-size: 0.8rem;">
+                                    <em>Aprox. 120g • 6 biscoitos por pacote</em>
+                                </p>
+                            </div>
+                            <div class="card-footer bg-white border-0 py-3 px-4 text-center">
+                                <span class="fw-bold fs-5 color-pink d-block">R$ 14,00</span>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 fade-up">
+                        <div class="card product-card h-100">
+                            <img src="maracuja.png" class="card-img-top" alt="Maracujá">
+                            <div class="card-body">
+                                <h5 class="card-title">Maracujá</h5>
+                                <p class="card-text small text-muted">Uma explosão tropical e cítrica. Cobertura de
+                                    chocolate branco com
+                                    a acidez refrescante do maracujá, que equilibra a base de amendoim.</p>
+                                <p class="text-secondary mb-0" style="font-size: 0.8rem;">
+                                    <em>Aprox. 120g • 6 biscoitos por pacote</em>
+                                </p>
+                            </div>
+                            <div class="card-footer bg-white border-0 py-3 px-4 text-center">
+                                <span class="fw-bold fs-5 color-pink d-block">R$ 14,00</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 fade-up">
+                        <div class="card product-card h-100">
+                            <img src="ninho.png" class="card-img-top" alt="Ninho">
+                            <div class="card-body">
+                                <h5 class="card-title">Ninho</h5>
+                                <p class="card-text small text-muted">Sabor de infância. Uma cobertura cremosa e
+                                    aveludada do autêntico
+                                    Leite Ninho. Pura nostalgia e doçura.</p>
+                                <p class="text-secondary mb-0" style="font-size: 0.8rem;">
+                                    <em>Aprox. 120g • 6 biscoitos por pacote</em>
+                                </p>
+                            </div>
+                            <div class="card-footer bg-white border-0 py-3 px-4 text-center">
+                                <span class="fw-bold fs-5 color-pink d-block">R$ 14,00</span>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 fade-up">
+                        <div class="card product-card h-100">
+                            <img src="cafe.png" class="card-img-top" alt="Café">
+                            <div class="card-body">
+                                <h5 class="card-title">Café com Nibis de Cacau</h5>
+                                <p class="card-text small text-muted">Para os amantes de um bom expresso. O biscoito
+                                    recebe uma
+                                    cobertura com o aroma e o sabor marcante do café. Perfeito para acompanhar a sua
+                                    bebida favorita.</p>
+                                <p class="text-secondary mb-0" style="font-size: 0.8rem;">
+                                    <em>Aprox. 120g • 6 biscoitos por pacote</em>
+                                </p>
+                            </div>
+                            <div class="card-footer bg-white border-0 py-3 px-4 text-center">
+                                <span class="fw-bold fs-5 color-pink d-block">R$ 14,00</span>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 fade-up">
+                        <div class="card product-card h-100">
+                            <img src="pistache.png" class="card-img-top" alt="Pistache">
+                            <div class="card-body">
+                                <h5 class="card-title">Pistache</h5>
+                                <p class="card-text small text-muted">A nobreza do pistache. O biscoito recebe uma
+                                    cobertura sabor
+                                    pistache e granulado de pistache crocante pro cima.</p>
+                                <p class="text-secondary mb-0" style="font-size: 0.8rem;">
+                                    <em>Aprox. 100g • 5 biscoitos por pacote</em>
+                                </p>
+                            </div>
+                            <div class="card-footer bg-white border-0 py-3 px-4 text-center">
+                                <span class="fw-bold fs-5 color-pink d-block">R$ 14,00</span>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card de evento -->
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 fade-up">
+                        <div class="card h-100 d-flex flex-column justify-content-center align-items-center text-center p-4" style="background-color: var(--beige);">
+                            <i class="bi bi-party-popper-fill display-4 color-pink mb-3"></i>
+                            <h5 class="card-title">Personalize seu Evento</h5>
+                            <p class="card-text small text-muted">Criamos lembrancinhas exclusivas para casamentos,
+                                festas e eventos
+                                corporativos.</p>
+                            <a href="https://wa.me/5516936180155?text=Gostaria%20de%20um%20or%C3%A7amento%20para%20evento." class="btn btn-whatsapp mt-3" target="_blank" rel="noopener noreferrer">Orçamento</a>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="my-5" style="opacity:0.12">
+
+                <!-- COOKIES ARTESANAIS -->
+                <div class="product-category">
+                    <div class="text-center mb-4">
+                        <h3 class="fw-800" style="color:var(--accent);"><i class="bi bi-cookie me-2"></i> Cookies
+                            Artesanais</h3>
+                        <p class="text-muted">Feitos com massa macia por dentro e crocante por fora.</p>
+                    </div>
+
+                    <div class="row g-4 justify-content-center">
+                        <div class="col-12 col-sm-6 col-lg-4 fade-up">
+                            <div class="card product-card h-100">
+                                <img src="chunks.png" class="card-img-top" alt="Belga Chips">
+                                <div class="card-body">
+                                    <h5 class="card-title">Belga Chips</h5>
+                                    <p class="card-text small text-muted">Exageradamente chocolatudo! O Belga Chips é para quem não abre mão de muito recheio. Um blend perfeito e farto de chocolates Callebaut ao leite e meio amargo que derrete na boca.</p>
+                                    <p class="text-secondary mb-0" style="font-size: 0.8rem;">
+                                        <em>Aprox. 80g.</em>
+                                    </p>
+                                </div>
+                                <div class="card-footer bg-white border-0 py-3 px-4 text-center">
+                                    <span class="fw-bold fs-5 color-pink d-block">R$ 18,00</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-sm-6 col-lg-4 fade-up">
+                            <div class="card product-card h-100">
+                                <img src="red.png" class="card-img-top" alt="Red Velvet">
+                                <div class="card-body">
+                                    <h5 class="card-title">Red Velvet</h5>
+                                    <p class="card-text small text-muted">Visual vibrante e sabor delicado. Cookie de
+                                        massa vermelha
+                                        aveludada, com gotas de chocolate branco e um toque sutil de cacau.</p>
+                                    <p class="text-secondary mb-0" style="font-size: 0.8rem;">
+                                        <em>Aprox. 80g.</em>
+                                    </p>
+                                </div>
+                                <div class="card-footer bg-white border-0 py-3 px-4 text-center">
+                                    <span class="fw-bold fs-5 color-pink d-block">R$ 18,00</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-sm-6 col-lg-4 fade-up">
+                            <div class="card product-card h-100">
+                                <img src="smores.png" class="card-img-top" alt="S'mores">
+                                <div class="card-body">
+                                    <h5 class="card-title">S'mores</h5>
+                                    <p class="card-text small text-muted">A fogueira americana em forma de cookie! Massa
+                                        de chocolate com
+                                        pedaços de biscoito, coberta com um marshmallow tostado e derretido.</p>
+                                    <p class="text-secondary mb-0" style="font-size: 0.8rem;">
+                                        <em>Aprox. 80g.</em>
+                                    </p>
+                                </div>
+                                <div class="card-footer bg-white border-0 py-3 px-4 text-center">
+                                    <span class="fw-bold fs-5 color-pink d-block">R$ 18,00</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-sm-6 col-lg-4 fade-up">
+                            <div class="card product-card h-100">
+                                <img src="cenoura.png" class="card-img-top" alt="Cenoura">
+                                <div class="card-body">
+                                    <h5 class="card-title">Cenoura</h5>
+                                    <p class="card-text small text-muted">Inspirado no bolo favorito. Cookie macio de
+                                        cenoura recheado com
+                                        o clássico e delicioso brigadeiro cremoso.</p>
+                                    <p class="text-secondary mb-0" style="font-size: 0.8rem;">
+                                        <em>Aprox. 100g.</em>
+                                    </p>
+                                </div>
+
+                                <div class="card-footer bg-white border-0 py-3 px-4 text-center">
+                                    <span class="fw-bold fs-5 color-pink d-block">R$ 18,00</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-sm-6 col-lg-4 fade-up">
+                            <div class="card product-card h-100">
+                                <img src="limao.png" class="card-img-top" alt="Limão Siciliano">
+                                <div class="card-body">
+                                    <h5 class="card-title">Limão Siciliano</h5>
+                                    <p class="card-text small text-muted">Leve e refrescante. O sabor cítrico e
+                                        aromático do limão
+                                        siciliano em um cookie com recheio aveludado de brigadeiro de limão.</p>
+                                    <p class="text-secondary mb-0" style="font-size: 0.8rem;">
+                                        <em>Aprox. 100g.</em>
+                                    </p>
+                                </div>
+                                <div class="card-footer bg-white border-0 py-3 px-4 text-center">
+                                    <span class="fw-bold fs-5 color-pink d-block">R$ 18,00</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-sm-6 col-lg-4 fade-up">
+                            <div class="card product-card h-100">
+                                <img src="cmaracuja.png" class="card-img-top" alt="Maracujá">
+                                <div class="card-body">
+                                    <h5 class="card-title">Maracujá</h5>
+                                    <p class="card-text small text-muted">Explosão agridoce. Cookie tropical recheado
+                                        com um brigadeiro de
+                                        maracujá que traz acidez e refrescância.</p>
+                                    <p class="text-secondary mb-0" style="font-size: 0.8rem;">
+                                        <em>Aprox. 100g.</em>
+                                    </p>
+                                </div>
+                                <div class="card-footer bg-white border-0 py-3 px-4 text-center">
+                                    <span class="fw-bold fs-5 color-pink d-block">R$ 18,00</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-sm-6 col-lg-4 fade-up">
+                            <div class="card product-card h-100">
+                                <img src="nutella.png" class="card-img-top" alt="Nutella">
+                                <div class="card-body">
+                                    <h5 class="card-title">Nutella</h5>
+                                    <p class="card-text small text-muted">Impossível resistir. Nosso cookie tradicional
+                                        com um recheio
+                                        cremoso e abundante do autêntico creme de avelã Nutella.</p>
+                                    <p class="text-secondary mb-0" style="font-size: 0.8rem;">
+                                        <em>Aprox. 100g.</em>
+                                    </p>
+                                </div>
+                                <div class="card-footer bg-white border-0 py-3 px-4 text-center">
+                                    <span class="fw-bold fs-5 color-pink d-block">R$ 18,00</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-sm-6 col-lg-4 fade-up">
+                            <div class="card product-card h-100">
+                                <img src="ccafe.png" class="card-img-top" alt="Nutella">
+                                <div class="card-body">
+                                    <h5 class="card-title">Café</h5>
+                                    <p class="card-text small text-muted">Massa intensa de café com gotas de chocolate
+                                        meio amargo, crocante nas bordas e extremamente macia por dentro. Finalizado com
+                                        um recheio de brigadeiro de café que derrete na boca.</p>
+                                    <p class="text-secondary mb-0" style="font-size: 0.8rem;">
+                                        <em>Aprox. 100g.</em>
+                                    </p>
+                                </div>
+                                <div class="card-footer bg-white border-0 py-3 px-4 text-center">
+                                    <span class="fw-bold fs-5 color-pink d-block">R$ 18,00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-4 fade-up">
+                            <div class="card product-card h-100">
+                                <img src="cdoce de leite.png" class="card-img-top" alt="Doce de Leite com Flor de Sal">
+                                <div class="card-body">
+                                    <h5 class="card-title">Doce de Leite com Flor de Sal</h5>
+                                    <p class="card-text small text-muted">Aquele toque salgadinho que muda tudo! Nosso cookie com coração de doce de leite, pedaços derretidos de chocolate branco e ao leite Callebaut, e a delicadeza da flor de sal. Uma mordida inesquecível.</p>
+                                    <p class="text-secondary mb-0" style="font-size: 0.8rem;">
+                                        <em>Aprox. 100g.</em>
+                                    </p>
+                                </div>
+                                <div class="card-footer bg-white border-0 py-3 px-4 text-center">
+                                    <span class="fw-bold fs-5 color-pink d-block">R$ 18,00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INFORMAÇÃO NUTRICIONAL -->
+    <section id="nutricional" class="container my-5 fade-up" style="position: relative; z-index: 10;">
+        <div class="section-header text-center mb-4">
+            <h2 class="display-6">Informação Nutricional 📊</h2>
+            <p class="text-muted">Transparência e qualidade em cada ingrediente.</p>
+        </div>
+
+        <div class="about-card p-4">
+            <!-- Tabs para alternar entre Biscoitos e Cookies -->
+            <ul class="nav nav-pills nav-fill mb-4" id="nutritionTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="biscoitos-tab" data-bs-toggle="pill" data-bs-target="#biscoitos-nutrition" type="button" role="tab" style="font-weight:700">
+                        🥜 Biscoitos de Amendoim
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="cookies-tab" data-bs-toggle="pill" data-bs-target="#cookies-nutrition" type="button" role="tab" style="font-weight:700">
+                        🍪 Cookies Artesanais
+                    </button>
+                </li>
+            </ul>
+
+            <div class="tab-content" id="nutritionTabContent">
+                <!-- Tabela Biscoitos de Amendoim -->
+                <div class="tab-pane fade show active" id="biscoitos-nutrition" role="tabpanel">
+                    <div class="alert" style="background-color: rgba(242,143,161,0.1); border-left: 4px solid var(--pink-logo); border-radius: 8px;">
+                        <p class="mb-2"><strong>Conteúdo da embalagem:</strong> 6 biscoitos (≈ 102g)</p>
+                        <p class="mb-0"><strong>Porção:</strong> 1 biscoito (≈ 17g)</p>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table table-hover" style="border-radius: 12px; overflow: hidden;">
+                            <thead style="background: linear-gradient(135deg, var(--beige) 0%, var(--accent) 100%); color: white;">
+                                <tr>
+                                    <th scope="col" style="font-weight: 800;">Informação Nutricional</th>
+                                    <th scope="col" class="text-center" style="font-weight: 800;">1 biscoito</th>
+                                    <th scope="col" class="text-center" style="font-weight: 800;">%VD*</th>
+                                    <th scope="col" class="text-center" style="font-weight: 800;">6 biscoitos (pacote)
+                                    </th>
+                                    <th scope="col" class="text-center" style="font-weight: 800;">%VD**</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Valor Energético</strong></td>
+                                    <td class="text-center">93 kcal / 390 kJ</td>
+                                    <td class="text-center">5%</td>
+                                    <td class="text-center">558 kcal / 2.340 kJ</td>
+                                    <td class="text-center">28%</td>
+                                </tr>
+                                <tr>
+                                    <td>Carboidratos</td>
+                                    <td class="text-center">7,8g</td>
+                                    <td class="text-center">3%</td>
+                                    <td class="text-center">46,8g</td>
+                                    <td class="text-center">16%</td>
+                                </tr>
+                                <tr>
+                                    <td>Proteínas</td>
+                                    <td class="text-center">2,6g</td>
+                                    <td class="text-center">5%</td>
+                                    <td class="text-center">15,6g</td>
+                                    <td class="text-center">31%</td>
+                                </tr>
+                                <tr>
+                                    <td>Gorduras Totais</td>
+                                    <td class="text-center">6,3g</td>
+                                    <td class="text-center">10%</td>
+                                    <td class="text-center">37,8g</td>
+                                    <td class="text-center">58%</td>
+                                </tr>
+                                <tr>
+                                    <td class="ps-4">— Gorduras Saturadas</td>
+                                    <td class="text-center">1,6g</td>
+                                    <td class="text-center">8%</td>
+                                    <td class="text-center">9,6g</td>
+                                    <td class="text-center">48%</td>
+                                </tr>
+                                <tr>
+                                    <td class="ps-4">— Gorduras Trans</td>
+                                    <td class="text-center">0g</td>
+                                    <td class="text-center">—</td>
+                                    <td class="text-center">0g</td>
+                                    <td class="text-center">—</td>
+                                </tr>
+                                <tr>
+                                    <td>Fibra Alimentar</td>
+                                    <td class="text-center">1,7g</td>
+                                    <td class="text-center">7%</td>
+                                    <td class="text-center">10,2g</td>
+                                    <td class="text-center">41%</td>
+                                </tr>
+                                <tr>
+                                    <td>Sódio</td>
+                                    <td class="text-center">9mg</td>
+                                    <td class="text-center">0%</td>
+                                    <td class="text-center">54mg</td>
+                                    <td class="text-center">2%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="mt-3">
+                        <div class="alert alert-info" style="background-color: rgba(200,145,90,0.1); border-left: 4px solid var(--accent); border-radius: 8px;">
+                            <p class="mb-0 small"><strong>ℹ️ Importante:</strong> Esta tabela nutricional é válida para
+                                todos os
+                                nossos biscoitos de amendoim, independente da cobertura (Meio Amargo, Chocolate Branco,
+                                Caramelo
+                                Salgado, Limão Siciliano, Maracujá, Ninho, Café ou Pistache). A base do
+                                biscoito é
+                                a mesma; apenas as coberturas variam, porém considera-se a cobertura com o mesmo valor
+                                energético para
+                                todos os biscoitos.</p>
+                        </div>
+                        <p class="small text-muted mb-2 mt-3"><strong>Ingredientes:</strong> Amendoim, açúcar refinado,
+                            açúcar
+                            mascavo, cobertura (depende do biscoito), ovo, fermento químico e sal.</p>
+                        <p class="small text-muted mb-2"><strong>Informações Complementares:</strong> Produto artesanal
+                            • Não contém
+                            gordura trans • Alto teor energético</p>
+                        <p class="small text-muted mb-0">* % Valores Diários de referência com base em uma dieta de
+                            2.000 kcal ou
+                            8.400 kJ. Seus valores diários podem ser maiores ou menores dependendo de suas necessidades
+                            energéticas.
+                        </p>
+                        <p class="small text-muted mt-2" style="font-weight: 600; color: var(--brown) !important;">⚠️
+                            <strong>ALÉRGICOS: CONTÉM AMENDOIM E OVOS.</strong> Pode conter leite (dependendo do
+                            chocolate utilizado).
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Tabela Cookies Artesanais -->
+                <div class="tab-pane fade" id="cookies-nutrition" role="tabpanel">
+                    <div class="alert" style="background-color: rgba(242,143,161,0.1); border-left: 4px solid var(--pink-logo); border-radius: 8px;">
+                        <p class="mb-0"><strong>ℹ️ Selecione o sabor:</strong> Cada cookie possui sua própria tabela
+                            nutricional
+                            devido às variações de ingredientes e recheios.</p>
+                    </div>
+
+                    <!-- Seletor de sabores de cookies -->
+                    <div class="mb-4">
+                        <label class="form-label fw-bold" style="color: var(--brown);">Escolha o sabor do
+                            cookie:</label>
+                        <select class="form-select form-select-lg" id="cookieFlavorSelector" style="border: 2px solid var(--accent); border-radius: 12px;">
+                            <option value="chunks">Belga Chips</option>
+                            <option value="red-velvet">Red Velvet</option>
+                            <option value="smores">S'mores</option>
+                            <option value="cenoura">Cenoura com Brigadeiro</option>
+                            <option value="limao">Limão Siciliano</option>
+                            <option value="maracuja">Maracujá</option>
+                            <option value="nutella">Nutella</option>
+                            <option value="doce-de-leite">Doce de Leite com Flor de Sal</option>
+                        </select>
+                    </div>
+
+                    <!-- Tabelas nutricionais individuais por sabor (inicialmente todas ocultas exceto Chunks) -->
+                    <div class="cookie-nutrition-table" id="nutrition-chunks">
+                        <h5 class="mb-3" style="color: var(--accent); font-weight: 800;">🍪 Cookie Belga Chips
+                        </h5>
+
+                        <div class="alert" style="background-color: rgba(242,143,161,0.1); border-left: 4px solid var(--pink-logo); border-radius: 8px;">
+                            <p class="mb-0"><strong>Porção:</strong> 80g (1 cookie)</p>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table table-hover" style="border-radius: 12px; overflow: hidden;">
+                                <thead style="background: linear-gradient(135deg, var(--beige) 0%, var(--accent) 100%); color: white;">
+                                    <tr>
+                                        <th scope="col" style="font-weight: 800;">Informação Nutricional</th>
+                                        <th scope="col" class="text-center" style="font-weight: 800;">Quantidade por
+                                            porção</th>
+                                        <th scope="col" class="text-center" style="font-weight: 800;">%VD*</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Valor Energético</strong></td>
+                                        <td class="text-center">390 kcal / 1.638 kJ</td>
+                                        <td class="text-center">20%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Carboidratos</td>
+                                        <td class="text-center">45g</td>
+                                        <td class="text-center">15%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Proteínas</td>
+                                        <td class="text-center">5,9g</td>
+                                        <td class="text-center">12%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Gorduras Totais</td>
+                                        <td class="text-center">20g</td>
+                                        <td class="text-center">31%</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ps-4">— Gorduras Saturadas</td>
+                                        <td class="text-center">11g</td>
+                                        <td class="text-center">55%</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ps-4">— Gorduras Trans</td>
+                                        <td class="text-center">0g</td>
+                                        <td class="text-center">—</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Fibra Alimentar</td>
+                                        <td class="text-center">2,1g</td>
+                                        <td class="text-center">8%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sódio</td>
+                                        <td class="text-center">170mg</td>
+                                        <td class="text-center">7%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="mt-3">
+                            <div class="alert alert-danger" style="background-color: rgba(220,53,69,0.1); border-left: 4px solid #dc3545; border-radius: 8px;">
+                                <p class="mb-0 small"><strong>⚠️ ALTO EM GORDURAS SATURADAS</strong></p>
+                            </div>
+                            <p class="small text-muted mb-2 mt-3"><strong>Ingredientes:</strong> Farinha de trigo,
+                                chocolate meio
+                                amargo, chocolate ao leite, manteiga sem sal, açúcar mascavo claro, açúcar refinado,
+                                ovo, fermento
+                                químico, bicarbonato de sódio, essência de baunilha e sal.</p>
+                            <p class="small text-muted mb-2"><strong>Informações Complementares:</strong> Produto
+                                artesanal • Não
+                                contém gordura trans</p>
+                            <p class="small text-muted mb-0">* % Valores Diários de referência com base em uma dieta de
+                                2.000 kcal ou
+                                8.400 kJ. Seus valores diários podem ser maiores ou menores dependendo de suas
+                                necessidades energéticas.
+                            </p>
+                            <p class="small text-muted mt-2" style="font-weight: 600; color: var(--brown) !important;">
+                                ⚠️
+                                <strong>ALÉRGICOS: CONTÉM TRIGO, LEITE, OVOS E SOJA. CONTÉM GLÚTEN.</strong>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="cookie-nutrition-table d-none" id="nutrition-red-velvet">
+                        <h5 class="mb-3" style="color: var(--accent); font-weight: 800;">🍪 Cookie Red Velvet</h5>
+
+                        <div class="alert" style="background-color: rgba(242,143,161,0.1); border-left: 4px solid var(--pink-logo); border-radius: 8px;">
+                            <p class="mb-0"><strong>Porção:</strong> 80g (1 cookie)</p>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table table-hover" style="border-radius: 12px; overflow: hidden;">
+                                <thead style="background: linear-gradient(135deg, var(--beige) 0%, var(--accent) 100%); color: white;">
+                                    <tr>
+                                        <th scope="col" style="font-weight: 800;">Informação Nutricional</th>
+                                        <th scope="col" class="text-center" style="font-weight: 800;">Quantidade por
+                                            porção</th>
+                                        <th scope="col" class="text-center" style="font-weight: 800;">%VD*</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Valor Energético</strong></td>
+                                        <td class="text-center">360 kcal / 1.512 kJ</td>
+                                        <td class="text-center">18%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Carboidratos</td>
+                                        <td class="text-center">42g</td>
+                                        <td class="text-center">14%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Proteínas</td>
+                                        <td class="text-center">5,8g</td>
+                                        <td class="text-center">12%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Gorduras Totais</td>
+                                        <td class="text-center">18g</td>
+                                        <td class="text-center">28%</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ps-4">— Gorduras Saturadas</td>
+                                        <td class="text-center">10g</td>
+                                        <td class="text-center">50%</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ps-4">— Gorduras Trans</td>
+                                        <td class="text-center">0g</td>
+                                        <td class="text-center">—</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Fibra Alimentar</td>
+                                        <td class="text-center">1,9g</td>
+                                        <td class="text-center">8%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sódio</td>
+                                        <td class="text-center">165mg</td>
+                                        <td class="text-center">7%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="mt-3">
+                            <div class="alert alert-danger" style="background-color: rgba(220,53,69,0.1); border-left: 4px solid #dc3545; border-radius: 8px;">
+                                <p class="mb-0 small"><strong>⚠️ ALTO EM GORDURAS SATURADAS</strong></p>
+                            </div>
+                            <p class="small text-muted mb-2 mt-3"><strong>Ingredientes:</strong> Farinha de trigo,
+                                chocolate branco,
+                                manteiga sem sal, açúcar mascavo, açúcar refinado, leite em pó integral, ovo, cacau em
+                                pó, fermento
+                                químico, bicarbonato de sódio, corante vermelho, essência de baunilha e sal.</p>
+                            <p class="small text-muted mb-2"><strong>Informações Complementares:</strong> Produto
+                                artesanal • Não
+                                contém gordura trans</p>
+                            <p class="small text-muted mb-0">* % Valores Diários de referência com base em uma dieta de
+                                2.000 kcal ou
+                                8.400 kJ. Seus valores diários podem ser maiores ou menores dependendo de suas
+                                necessidades energéticas.
+                            </p>
+                            <p class="small text-muted mt-2" style="font-weight: 600; color: var(--brown) !important;">
+                                ⚠️
+                                <strong>ALÉRGICOS: CONTÉM TRIGO, LEITE, OVOS E SOJA. CONTÉM GLÚTEN.</strong>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="cookie-nutrition-table d-none" id="nutrition-smores">
+                        <h5 class="mb-3" style="color: var(--accent); font-weight: 800;">🍪 Cookie S'mores</h5>
+
+                        <div class="alert" style="background-color: rgba(242,143,161,0.1); border-left: 4px solid var(--pink-logo); border-radius: 8px;">
+                            <p class="mb-0"><strong>Porção:</strong> 80g (1 cookie)</p>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table table-hover" style="border-radius: 12px; overflow: hidden;">
+                                <thead style="background: linear-gradient(135deg, var(--beige) 0%, var(--accent) 100%); color: white;">
+                                    <tr>
+                                        <th scope="col" style="font-weight: 800;">Informação Nutricional</th>
+                                        <th scope="col" class="text-center" style="font-weight: 800;">Quantidade por
+                                            porção</th>
+                                        <th scope="col" class="text-center" style="font-weight: 800;">%VD*</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Valor Energético</strong></td>
+                                        <td class="text-center">365 kcal / 1.533 kJ</td>
+                                        <td class="text-center">18%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Carboidratos</td>
+                                        <td class="text-center">45g</td>
+                                        <td class="text-center">15%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Proteínas</td>
+                                        <td class="text-center">5,1g</td>
+                                        <td class="text-center">10%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Gorduras Totais</td>
+                                        <td class="text-center">18g</td>
+                                        <td class="text-center">28%</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ps-4">— Gorduras Saturadas</td>
+                                        <td class="text-center">9,6g</td>
+                                        <td class="text-center">48%</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ps-4">— Gorduras Trans</td>
+                                        <td class="text-center">0g</td>
+                                        <td class="text-center">—</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Fibra Alimentar</td>
+                                        <td class="text-center">1,8g</td>
+                                        <td class="text-center">7%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sódio</td>
+                                        <td class="text-center">148mg</td>
+                                        <td class="text-center">6%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="mt-3">
+                            <div class="alert alert-danger" style="background-color: rgba(220,53,69,0.1); border-left: 4px solid #dc3545; border-radius: 8px;">
+                                <p class="mb-0 small"><strong>⚠️ ALTO EM GORDURAS SATURADAS</strong></p>
+                            </div>
+                            <p class="small text-muted mb-2 mt-3"><strong>Ingredientes:</strong> Farinha de trigo,
+                                chocolate meio
+                                amargo, chocolate ao leite, manteiga sem sal, açúcar mascavo claro, açúcar refinado,
+                                marshmallow,
+                                bolacha, ovo, fermento químico, bicarbonato de sódio e sal.</p>
+                            <p class="small text-muted mb-2"><strong>Informações Complementares:</strong> Produto
+                                artesanal • Não
+                                contém gordura trans</p>
+                            <p class="small text-muted mb-0">* % Valores Diários de referência com base em uma dieta de
+                                2.000 kcal ou
+                                8.400 kJ. Seus valores diários podem ser maiores ou menores dependendo de suas
+                                necessidades energéticas.
+                            </p>
+                            <p class="small text-muted mt-2" style="font-weight: 600; color: var(--brown) !important;">
+                                ⚠️
+                                <strong>ALÉRGICOS: CONTÉM TRIGO, LEITE, OVOS E SOJA. CONTÉM GLÚTEN.</strong>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="cookie-nutrition-table d-none" id="nutrition-cenoura">
+                        <h5 class="mb-3" style="color: var(--accent); font-weight: 800;">🍪 Cookie Cenoura com
+                            Brigadeiro</h5>
+
+                        <div class="alert" style="background-color: rgba(242,143,161,0.1); border-left: 4px solid var(--pink-logo); border-radius: 8px;">
+                            <p class="mb-0"><strong>Porção:</strong> 100g (1 cookie)</p>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table table-hover" style="border-radius: 12px; overflow: hidden;">
+                                <thead style="background: linear-gradient(135deg, var(--beige) 0%, var(--accent) 100%); color: white;">
+                                    <tr>
+                                        <th scope="col" style="font-weight: 800;">Informação Nutricional</th>
+                                        <th scope="col" class="text-center" style="font-weight: 800;">Quantidade por
+                                            porção</th>
+                                        <th scope="col" class="text-center" style="font-weight: 800;">%VD*</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Valor Energético</strong></td>
+                                        <td class="text-center">445 kcal / 1.869 kJ</td>
+                                        <td class="text-center">22%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Carboidratos</td>
+                                        <td class="text-center">56g</td>
+                                        <td class="text-center">19%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Proteínas</td>
+                                        <td class="text-center">6,5g</td>
+                                        <td class="text-center">13%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Gorduras Totais</td>
+                                        <td class="text-center">22g</td>
+                                        <td class="text-center">34%</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ps-4">— Gorduras Saturadas</td>
+                                        <td class="text-center">12g</td>
+                                        <td class="text-center">60%</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ps-4">— Gorduras Trans</td>
+                                        <td class="text-center">0g</td>
+                                        <td class="text-center">—</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Fibra Alimentar</td>
+                                        <td class="text-center">2,5g</td>
+                                        <td class="text-center">10%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sódio</td>
+                                        <td class="text-center">175mg</td>
+                                        <td class="text-center">7%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="mt-3">
+                            <div class="alert alert-danger" style="background-color: rgba(220,53,69,0.1); border-left: 4px solid #dc3545; border-radius: 8px;">
+                                <p class="mb-0 small"><strong>⚠️ ALTO EM GORDURAS SATURADAS</strong></p>
+                            </div>
+                            <p class="small text-muted mb-2 mt-3"><strong>Ingredientes:</strong> Farinha de trigo, purê
+                                de cenoura,
+                                manteiga sem sal, açúcar mascavo claro, açúcar refinado, brigadeiro de chocolate,
+                                chocolate meio amargo,
+                                chocolate ao leite, ovo, fermento químico, bicarbonato de sódio, essência de baunilha e
+                                sal.</p>
+                            <p class="small text-muted mb-2"><strong>Informações Complementares:</strong> Produto
+                                artesanal • Alto
+                                teor energético • Não contém gordura trans</p>
+                            <p class="small text-muted mb-0">* % Valores Diários de referência com base em uma dieta de
+                                2.000 kcal ou
+                                8.400 kJ. Seus valores diários podem ser maiores ou menores dependendo de suas
+                                necessidades energéticas.
+                            </p>
+                            <p class="small text-muted mt-2" style="font-weight: 600; color: var(--brown) !important;">
+                                ⚠️
+                                <strong>ALÉRGICOS: CONTÉM TRIGO, LEITE, OVOS E SOJA. CONTÉM GLÚTEN.</strong>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="cookie-nutrition-table d-none" id="nutrition-limao">
+                        <h5 class="mb-3" style="color: var(--accent); font-weight: 800;">🍪 Cookie Limão Siciliano</h5>
+
+                        <div class="alert" style="background-color: rgba(242,143,161,0.1); border-left: 4px solid var(--pink-logo); border-radius: 8px;">
+                            <p class="mb-0"><strong>Porção:</strong> 100g (1 cookie)</p>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table table-hover" style="border-radius: 12px; overflow: hidden;">
+                                <thead style="background: linear-gradient(135deg, var(--beige) 0%, var(--accent) 100%); color: white;">
+                                    <tr>
+                                        <th scope="col" style="font-weight: 800;">Informação Nutricional</th>
+                                        <th scope="col" class="text-center" style="font-weight: 800;">Quantidade por
+                                            porção</th>
+                                        <th scope="col" class="text-center" style="font-weight: 800;">%VD*</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Valor Energético</strong></td>
+                                        <td class="text-center">455 kcal / 1.911 kJ</td>
+                                        <td class="text-center">23%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Carboidratos</td>
+                                        <td class="text-center">57g</td>
+                                        <td class="text-center">19%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Proteínas</td>
+                                        <td class="text-center">6,8g</td>
+                                        <td class="text-center">14%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Gorduras Totais</td>
+                                        <td class="text-center">23g</td>
+                                        <td class="text-center">35%</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ps-4">— Gorduras Saturadas</td>
+                                        <td class="text-center">14g</td>
+                                        <td class="text-center">70%</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ps-4">— Gorduras Trans</td>
+                                        <td class="text-center">0g</td>
+                                        <td class="text-center">—</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Fibra Alimentar</td>
+                                        <td class="text-center">1,6g</td>
+                                        <td class="text-center">6%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sódio</td>
+                                        <td class="text-center">105mg</td>
+                                        <td class="text-center">4%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="mt-3">
+                            <div class="alert alert-danger" style="background-color: rgba(220,53,69,0.1); border-left: 4px solid #dc3545; border-radius: 8px;">
+                                <p class="mb-0 small"><strong>⚠️ ALTO EM GORDURAS SATURADAS</strong></p>
+                            </div>
+                            <p class="small text-muted mb-2 mt-3"><strong>Ingredientes:</strong> Farinha de trigo,
+                                chocolate branco,
+                                açúcar refinado, açúcar mascavo, manteiga sem sal, brigadeiro de limão siciliano, ovo,
+                                fermento químico,
+                                bicarbonato de sódio, essência de baunilha, raspas de limão siciliano e sal.</p>
+                            <p class="small text-muted mb-2"><strong>Informações Complementares:</strong> Produto
+                                artesanal • Alto
+                                teor energético • Não contém gordura trans</p>
+                            <p class="small text-muted mb-0">* % Valores Diários de referência com base em uma dieta de
+                                2.000 kcal ou
+                                8.400 kJ. Seus valores diários podem ser maiores ou menores dependendo de suas
+                                necessidades energéticas.
+                            </p>
+                            <p class="small text-muted mt-2" style="font-weight: 600; color: var(--brown) !important;">
+                                ⚠️
+                                <strong>ALÉRGICOS: CONTÉM TRIGO, LEITE, OVOS E SOJA. CONTÉM GLÚTEN.</strong>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="cookie-nutrition-table d-none" id="nutrition-maracuja">
+                        <h5 class="mb-3" style="color: var(--accent); font-weight: 800;">🍪 Cookie Maracujá</h5>
+
+                        <div class="alert" style="background-color: rgba(242,143,161,0.1); border-left: 4px solid var(--pink-logo); border-radius: 8px;">
+                            <p class="mb-0"><strong>Porção:</strong> 100g (1 cookie)</p>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table table-hover" style="border-radius: 12px; overflow: hidden;">
+                                <thead style="background: linear-gradient(135deg, var(--beige) 0%, var(--accent) 100%); color: white;">
+                                    <tr>
+                                        <th scope="col" style="font-weight: 800;">Informação Nutricional</th>
+                                        <th scope="col" class="text-center" style="font-weight: 800;">Quantidade por
+                                            porção</th>
+                                        <th scope="col" class="text-center" style="font-weight: 800;">%VD*</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Valor Energético</strong></td>
+                                        <td class="text-center">475 kcal / 1.995 kJ</td>
+                                        <td class="text-center">24%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Carboidratos</td>
+                                        <td class="text-center">56g</td>
+                                        <td class="text-center">19%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Proteínas</td>
+                                        <td class="text-center">7,8g</td>
+                                        <td class="text-center">16%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Gorduras Totais</td>
+                                        <td class="text-center">25g</td>
+                                        <td class="text-center">38%</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ps-4">— Gorduras Saturadas</td>
+                                        <td class="text-center">14g</td>
+                                        <td class="text-center">70%</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ps-4">— Gorduras Trans</td>
+                                        <td class="text-center">0g</td>
+                                        <td class="text-center">—</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Fibra Alimentar</td>
+                                        <td class="text-center">2,1g</td>
+                                        <td class="text-center">8%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sódio</td>
+                                        <td class="text-center">115mg</td>
+                                        <td class="text-center">5%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="mt-3">
+                            <div class="alert alert-danger" style="background-color: rgba(220,53,69,0.1); border-left: 4px solid #dc3545; border-radius: 8px;">
+                                <p class="mb-0 small"><strong>⚠️ ALTO EM GORDURAS SATURADAS</strong></p>
+                            </div>
+                            <p class="small text-muted mb-2 mt-3"><strong>Ingredientes:</strong> Farinha de trigo,
+                                chocolate ao leite,
+                                chocolate branco, açúcar refinado, açúcar mascavo, manteiga sem sal, brigadeiro de
+                                maracujá, leite em pó
+                                integral, ovo, fermento químico, bicarbonato de sódio, maracujá liofilizado, essência de
+                                baunilha e sal.
+                            </p>
+                            <p class="small text-muted mb-2"><strong>Informações Complementares:</strong> Produto
+                                artesanal • Alto
+                                teor energético • Não contém gordura trans</p>
+                            <p class="small text-muted mb-0">* % Valores Diários de referência com base em uma dieta de
+                                2.000 kcal ou
+                                8.400 kJ. Seus valores diários podem ser maiores ou menores dependendo de suas
+                                necessidades energéticas.
+                            </p>
+                            <p class="small text-muted mt-2" style="font-weight: 600; color: var(--brown) !important;">
+                                ⚠️
+                                <strong>ALÉRGICOS: CONTÉM TRIGO, LEITE, OVOS E SOJA. CONTÉM GLÚTEN.</strong>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="cookie-nutrition-table d-none" id="nutrition-nutella">
+                        <h5 class="mb-3" style="color: var(--accent); font-weight: 800;">🍪 Cookie Nutella</h5>
+
+                        <div class="alert" style="background-color: rgba(242,143,161,0.1); border-left: 4px solid var(--pink-logo); border-radius: 8px;">
+                            <p class="mb-0"><strong>Porção:</strong> 100g (1 cookie)</p>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table table-hover" style="border-radius: 12px; overflow: hidden;">
+                                <thead style="background: linear-gradient(135deg, var(--beige) 0%, var(--accent) 100%); color: white;">
+                                    <tr>
+                                        <th scope="col" style="font-weight: 800;">Informação Nutricional</th>
+                                        <th scope="col" class="text-center" style="font-weight: 800;">Quantidade por
+                                            porção</th>
+                                        <th scope="col" class="text-center" style="font-weight: 800;">%VD*</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Valor Energético</strong></td>
+                                        <td class="text-center">460 kcal / 1.932 kJ</td>
+                                        <td class="text-center">23%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Carboidratos</td>
+                                        <td class="text-center">55g</td>
+                                        <td class="text-center">18%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Proteínas</td>
+                                        <td class="text-center">7,5g</td>
+                                        <td class="text-center">15%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Gorduras Totais</td>
+                                        <td class="text-center">24g</td>
+                                        <td class="text-center">37%</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ps-4">— Gorduras Saturadas</td>
+                                        <td class="text-center">12g</td>
+                                        <td class="text-center">60%</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ps-4">— Gorduras Trans</td>
+                                        <td class="text-center">0g</td>
+                                        <td class="text-center">—</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Fibra Alimentar</td>
+                                        <td class="text-center">2,8g</td>
+                                        <td class="text-center">11%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sódio</td>
+                                        <td class="text-center">110mg</td>
+                                        <td class="text-center">5%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="mt-3">
+                            <div class="alert alert-danger" style="background-color: rgba(220,53,69,0.1); border-left: 4px solid #dc3545; border-radius: 8px;">
+                                <p class="mb-0 small"><strong>⚠️ ALTO EM GORDURAS SATURADAS</strong></p>
+                            </div>
+                            <p class="small text-muted mb-2 mt-3"><strong>Ingredientes:</strong> Farinha de trigo,
+                                chocolate meio
+                                amargo, Nutella® (açúcar, óleo vegetal, avelã, cacau em pó, leite em pó desnatado,
+                                lecitina de soja e
+                                aromatizante), manteiga sem sal, açúcar refinado, açúcar mascavo, ovo, leite em pó,
+                                fermento químico,
+                                bicarbonato de sódio, essência de baunilha e sal.</p>
+                            <p class="small text-muted mb-2"><strong>Informações Complementares:</strong> Produto
+                                artesanal • Alto
+                                teor energético • Não contém gordura trans</p>
+                            <p class="small text-muted mb-0">* % Valores Diários de referência com base em uma dieta de
+                                2.000 kcal ou
+                                8.400 kJ. Seus valores diários podem ser maiores ou menores dependendo de suas
+                                necessidades energéticas.
+                            </p>
+                            <p class="small text-muted mt-2" style="font-weight: 600; color: var(--brown) !important;">
+                                ⚠️
+                                <strong>ALÉRGICOS: CONTÉM TRIGO, LEITE, OVOS, AVELÃ E SOJA. CONTÉM GLÚTEN.</strong>
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- CONTATO -->
+    <section id="contato" class="container my-5 fade-up" style="position: relative; z-index: 10;">
+
+    </section>
+
+    <!-- ONDE ESTAMOS (MAPA) -->
+    <section id="onde-estamos" class="container my-5 fade-up" style="position: relative; z-index: 10;">
+        <div class="row g-4 align-items-center">
+            <div class="col-md-6">
+                <h4 style="color:var(--brown); font-weight:800">Onde Estamos</h4>
+                <p class="mb-1">Rua Professor Adalberto Nascimento, 390 — São Bernardo</p>
+                <p class="mb-1">Campinas - SP • CEP: 13030-730</p>
+                <p class="text-muted">Atendemos por encomenda e por iFood.</p>
+
+                <!-- iFood + WhatsApp em destaque também aqui -->
+                <div class="d-flex gap-2 mt-3">
+                    <a href="https://www.ifood.com.br/delivery/campinas-sp/doce-mordida-sao-bernardo/77c04a81-ce4b-4883-8123-2a0791923190" target="_blank" rel="noopener noreferrer" class="btn btn-ifood btn-lg d-flex align-items-center justify-content-center">
+                        <img src="ifood.png" alt="Peça no iFood" style="height: 28px; width: auto;">
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="map-wrapper">
+                    <!-- Google Maps embed com query do endereço informado -->
+                    <iframe src="https://www.google.com/maps?q=Rua+Professor+Adalberto+Nascimento,+390+-+São+Bernardo,+Campinas+-+SP,+13030-730&amp;output=embed" width="100%" height="320" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa — Doce Mordida (Rua Professor Adalberto Nascimento, 390, Campinas)">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer class="bg-white mt-5 border-top fade-up" style="position: relative; z-index: 10;">
+        <div class="container py-4">
+            <div class="row align-items-center">
+                <div class="col-md-6 d-flex align-items-center gap-3">
+                    <img src="logo.png" alt="Doce Mordida" style="height:44px;">
+                    <div>
+                        <div style="font-weight:800;color:var(--brown)">Doce Mordida</div>
+                        <small class="text-muted">Biscoitos artesanais • Campinas</small>
+                    </div>
+                </div>
+                <div class="col-md-6 text-md-end mt-3 mt-md-0">
+                    <small class="d-block">Siga-nos:</small>
+                    <a href="https://www.instagram.com/docemordidacamp/" class="text-muted me-2"><i class="bi bi-instagram"></i>
+                        Instagram</a>
+                    <a href="https://wa.me/5516936180155" class="text-muted"><i class="bi bi-whatsapp"></i> WhatsApp</a>
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <small class="text-muted">© <span id="anoAtual"></span> Doce Mordida. Todos os direitos
+                    reservados.</small>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp flutuante -->
+    <a class="whatsapp-float" href="https://wa.me/5516936180155" target="_blank" rel="noopener noreferrer" aria-label="Abrir WhatsApp">
+        <i class="bi bi-whatsapp"></i>
+    </a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- SCRIPTS: ano, intersection observer -->
+    <script>
+        // ano no rodapé
+        document.getElementById('anoAtual').textContent = new Date().getFullYear();
+
+        // animação de entrada das seções
+        const fadeEls = document.querySelectorAll('.fade-up');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) { entry.target.classList.add('show'); }
+            });
+        }, { threshold: 0.2 });
+        fadeEls.forEach(el => observer.observe(el));
+
+        // Seletor de sabores de cookies - alternar tabelas nutricionais
+        const cookieSelector = document.getElementById('cookieFlavorSelector');
+        if (cookieSelector) {
+            cookieSelector.addEventListener('change', function () {
+                // Ocultar todas as tabelas de cookies
+                document.querySelectorAll('.cookie-nutrition-table').forEach(table => {
+                    table.classList.add('d-none');
+                });
+
+                // Mostrar a tabela selecionada
+                const selectedFlavor = this.value;
+                const selectedTable = document.getElementById('nutrition-' + selectedFlavor);
+                if (selectedTable) {
+                    selectedTable.classList.remove('d-none');
+                }
+            });
+        }
+    </script>
+    <img src="cookie.png" alt="Biscoito girando" class="cookie-girando" aria-hidden="true">
+
+
+
+</body></html>
